@@ -2,7 +2,8 @@ package ma.emsi.chibel.tp2chibel;
 
 import dev.langchain4j.data.embedding.Embedding;
 import dev.langchain4j.model.embedding.EmbeddingModel;
-import dev.langchain4j.model.embedding.onnx.bgesmallenv15.BgeSmallEnV15EmbeddingModel;
+// Mis en commentaire depuis le test 5 : la dépendance de ce modèle a été mise en commentaire dans pom.xml (conflit avec easy-rag)
+//import dev.langchain4j.model.embedding.onnx.bgesmallenv15.BgeSmallEnV15EmbeddingModel;
 import dev.langchain4j.model.google.genai.GoogleGenAiEmbeddingModel;
 import dev.langchain4j.model.output.Response;
 import dev.langchain4j.store.embedding.CosineSimilarity;
@@ -27,7 +28,7 @@ public class Test4Embeddings {
 
     public static void main(String[] args) {
         // Modèle d'embeddings intégré à LangChain4j (ne coûte rien en tokens, entraîné avec des textes en anglais)
-        EmbeddingModel modeleIntegre = new BgeSmallEnV15EmbeddingModel();
+//        EmbeddingModel modeleIntegre = new BgeSmallEnV15EmbeddingModel();
 
         // Modèle d'embeddings externe de Google, plus performant pour le français
         String cle = System.getenv("GEMINI_KEY");
@@ -41,8 +42,8 @@ public class Test4Embeddings {
         for (String[] couple : COUPLES) {
             System.out.println("Phrase 1 : " + couple[0]);
             System.out.println("Phrase 2 : " + couple[1]);
-            System.out.printf("Similarité (modèle intégré bge-small-en-v1.5) : %.4f%n",
-                    similarite(modeleIntegre, couple[0], couple[1]));
+//            System.out.printf("Similarité (modèle intégré bge-small-en-v1.5) : %.4f%n",
+//                    similarite(modeleIntegre, couple[0], couple[1]));
             System.out.printf("Similarité (modèle Google gemini-embedding-001) : %.4f%n",
                     similarite(modeleGoogle, couple[0], couple[1]));
             System.out.println("--------------------------------------------------");

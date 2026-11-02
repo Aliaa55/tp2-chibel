@@ -25,9 +25,16 @@
             <artifactId>langchain4j-google-genai</artifactId>
             <version>1.23.0-beta33</version>
         </dependency>
+        <!-- Mise en commentaire pour éviter un conflit avec le modèle d'embeddings utilisé par easy-rag
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-embeddings-bge-small-en-v15</artifactId>
+            <version>1.23.0-beta33</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-easy-rag</artifactId>
             <version>1.23.0-beta33</version>
         </dependency>
         <dependency>
