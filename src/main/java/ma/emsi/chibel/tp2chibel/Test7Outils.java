@@ -19,6 +19,7 @@ public class Test7Outils {
                 .apiKey(cle)
                 .modelName("gemini-3.5-flash-lite")
                 .temperature(0.7)
+                .logRequestsAndResponses(true)
                 .build();
 
         AssistantMeteo assistant =
